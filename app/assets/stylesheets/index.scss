@@ -1,0 +1,83 @@
+  #first-block {
+    background-image: url('/assets/soup.jpg');
+    background-position:center bottom;
+    background-size: cover;
+    width: 100%;
+    height: 550px;
+    font-family: serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .t1 {
+    color:#fef8e6;
+    font-family: serif;
+    font-size: 48px;
+    position:absolute;
+    top: 480px;
+    left: 20px;
+  }
+  .t2{
+    color:#fef8e6;
+    font-family: serif;
+    position:absolute;
+    top: 545px;
+    left:20px;
+    font-size: 24px
+  }
+  #second-block {
+    background-color: #fef8e6;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .about-container{
+    text-align: center;
+    margin: 50px auto;
+    width: 80%;
+  }
+  .info-title {
+    font-size: 48px;
+    font-family: serif;
+    margin-bottom: 20px;
+    color: #444;
+    text-align: center;
+  }
+  
+  .info-text {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #444;
+    
+  }
+  .f-container {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: space-around;
+  }
+  h3 {
+    margin-bottom: 30px;
+  }
+  #third-block {
+    background-color: #bc5148;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  
+  .title {
+    font-size: 48px;
+    font-family: serif;
+    margin-bottom: 20px;
+    color: #444;
+    text-align: center;
+  }
+.search-container{
+    text-align: center;
+    margin: 50px auto;
+    width: 80%;
+}
+ 
+ 

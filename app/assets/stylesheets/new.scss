@@ -1,0 +1,45 @@
+.box{
+    padding: 0.2em 0.5em;
+    margin: 2em 0;
+    background: #bc5148;
+    box-shadow: 0px 0px 0px 10px #bc5148;
+    border: dashed 2px #fef8e6;
+    border-radius: 10px;
+}
+.box p {
+    margin: 0; 
+    padding: 0;
+}
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .box dt {
+      float: left;
+      padding: lem;
+      color: #444;
+  }
+  .box dd{
+      border-bottom: 1px solid #bc5148;
+      margin: 0;
+      padding: 1em 0 1em 18em; 
+  }
+  textarea{
+      width: 30em;
+      font-size: 1em;
+      padding: 5px;
+  }
+  p.submit{
+      text-align: center;
+  }
+  input[type="submit"]{
+      padding: 10px 80px;
+      background: #bc5148;
+      color: #444;
+      font-weight: bold;
+      border-radius: 10px;
+  }
+.abc-container{
+    text-align: right;
+    margin: 10px auto;
+}

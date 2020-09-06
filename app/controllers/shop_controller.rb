@@ -1,0 +1,4 @@
+class ShopController < ApplicationController
+               
+end
+

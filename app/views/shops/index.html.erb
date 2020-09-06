@@ -1,0 +1,46 @@
+<%= stylesheet_link_tag 'index', :media => "all" %>
+
+<section id="first-block">
+<p class="t1">つくばごはん</p>
+<p class="t2">学生のための飲食店紹介サイト</p>
+</section>
+<section id="second-block">
+   <P class="info-title">
+       成り立ち
+   </P>
+   <div class="about-container">
+       <p class="info-text">
+       　新型コロナウイルスの流行に伴って筑波大学では、新入生向けのオリエンテーションや新歓を中止にし、春学期の授業は全てオンラインで行われました。
+       そのため今年の新入生は、誰とも会う機会がなく同期や先輩とのつながりをつくりにくく、つくばで一人暮らしをしている人は特に学生生活を楽しめていないとのことでした。
+       そこで私は少しでもつくばの魅力を知ってもらいたいと考えこのサイトを作るに至りました。
+       サイトの目的としては、安くて美味しくて満腹になるようないわゆる学生向けのごはんを学生同紙で共有するというものです。
+       新入生はつくばでの美味しいごはん屋さんをたくさん知ることができ、上級生は今まで見つけることができなかった新たなお店を知ることができるかもしれません。
+       まさに「学生の学生による学生のためごはん情報サイト」です。
+       </p>
+   </div>
+</section>
+<section id="third-block">
+<p class="title">お店一覧</p>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <div class="search-container">
+      <%= form_tag({controller:"shops",action:"index"}, method: :get) do %>
+          <%= text_field_tag :search, params[:search], placeholder:"キーワード検索" %>
+          <%= submit_tag "検索" %>    
+      <% end %>
+  </div>
+<div class="f-container">
+  <% @shops.each do |t| %>
+    <div class="f-item">
+    <!--教材7-3挿入-->
+    <%= link_to shop_path(t.id) do %>
+       <% image_tag t.image_url, size: "250x200" if t.image? %>
+    <%end%>
+    </div>
+    
+    
+  <%end%>
+</div>
+
+</section>
+
+  

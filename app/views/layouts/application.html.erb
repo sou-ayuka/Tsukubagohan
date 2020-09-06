@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Food</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/e4b4de3485.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <header>
+    <h1>つくばごはん</h1>
+    <div class="header-list">
+    <ul>
+    <li><%= link_to "ホーム", shops_path %></li>
+    <li><%= link_to "お店登録", new_shop_path %></li>
+    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    </ul>
+    </div>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+        <small>© 2020 曺歩歌</small>
+    </footer>
+  </body>
+</html>

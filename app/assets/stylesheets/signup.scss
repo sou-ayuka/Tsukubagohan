@@ -1,0 +1,18 @@
+.post-container {
+    margin: 50px auto;
+    width: 80%;
+    border: solid #bc5148;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #bc5148;
+  }
+  .title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+  .signup-container{
+    display:flex;
+  flex-direction: colum;
+  justify-content: space-between;
+}

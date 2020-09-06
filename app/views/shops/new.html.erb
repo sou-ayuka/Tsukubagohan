@@ -1,0 +1,56 @@
+<%= stylesheet_link_tag 'new', :media => "all" %>
+<div class="post-container">
+<p class="title">新規お店登録</p>
+<%= form_for @shop  do |f| %>
+ <div class ="box">  
+  <div class="field">
+      <dt><%= f.label :お店の名前 %></dt>
+      <dd>
+      <%= f.text_field :name, :size => 30 %>
+      </dd>   
+    </div>
+    <div class="field">
+      <dt><%= f.label :お店のエリア %></dt>
+      <dd>
+      <%= f.select :area, [["桜","桜"],["天久保","天久保"],["春日","春日"],["その他","その他"]], include_blank: "選択してください" %>
+      </dd>
+    </div>
+    <div class="field">
+      <dt><%= f.label :お店の場所 %></dt>
+      <dd>
+      <%= f.text_field :place, :size => 30 %>
+      </dd>
+    </div>
+    <div class="field">
+      <dt><%= f.label :食事の価格帯 %></dt>
+      <dd>
+      <%= f.text_field :money, :size => 30 %>
+      </dd>
+    </div>
+    <div class="field">
+      <dt><%= f.label :食べ物のジャンル %></dt>
+      <dd>
+      <%= f.text_field :genre, :size => 30 %>
+      </dd>    
+    </div>
+    <div class="field">
+      <dt><%= f.label :お店について %></dt>
+      <dd>
+      <%= f.text_area :body, :size => 600 %>
+      </dd>
+    </div>
+    <div class="field">
+      <dt><%= f.label :画像 %></dt>
+      <dd>
+      <%= f.file_field :image %>
+      </dd>  
+    </div>
+   </div>
+    <p class="submit"><%= f.submit "お店を登録する" %></p>
+  <% end %>
+  </div>
+
+  <div class="abc-container">
+  <%= link_to "お店一覧に戻る", shops_path %>
+  <%= link_to "トップページへ", shops_path %>
+  </div>

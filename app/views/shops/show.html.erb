@@ -1,0 +1,69 @@
+<%= stylesheet_link_tag 'show', :media => "all" %>
+
+<div class="post-container">
+    <p class="title">お店詳細</p>
+  <div class="shop">
+    <!--教材7-3挿入-->
+    <div class="pict"><%= image_tag @shop.image_url, size: "450x300" if @shop.image? %></div>
+  <div class="text">
+    <p></p>
+    <p><%= @shop.user.name %></p>
+    <h3>お店の名前</h3>
+    <p><%= @shop.name %></p>
+    <p></p>
+    <p><%= @shop.area %></p>
+    <h3>お店の場所</h3>
+    <p><%= @shop.place %></p>
+    <h3>お店の価格帯</h3>
+    <p><%= @shop.money %></p>
+    <h3>ごはんのジャンル</h3>
+    <p><%= @shop.genre %></p>
+    <h3>お店について</h3>
+    <p><%= @shop.body %></p>
+    <h3>いいね件数: <%= @shop.likes.count %></h3>
+    <% if current_user.already_liked?(@shop) %>
+    <%= button_to 'いいねを取り消す', shop_like_path(@shop), method: :delete %>
+    <% else %>
+    <%= button_to 'いいね', shop_likes_path(@shop) %>
+    <% end %>
+    <%= @shop.created_at %>
+    <% @shop.liked_users.each do |user| %>
+    <li><%= user.name %></li>
+    <% end %>
+  </div>
+  </div>  
+</div>  
+
+
+<div class="comment-container">
+  <p class="abc">コメント一覧</p>
+  <% @comments.each do |c| %>
+    <div class="comment">
+      <div class="main-box">
+        <div class="left-container">
+          <%= c.user.email unless c.user.blank? %>
+          <br>
+          <%= c.comment %>
+        </div>
+      </div>
+      <p class="time"><%= c.created_at %></p>
+    </div>
+  <% end %>
+</div>  
+
+<div class="text-container">
+  <% if user_signed_in? %>
+    <%= form_with(model: [@shop, @comment], local: true) do |f| %>
+      <%= f.text_area :comment%>
+      <%= button_tag type: "submit" do %>
+        <i class="far fa-comments"></i> コメントする
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="right-container">
+    <%= link_to "編集する", edit_shop_path(@shop.id) %>
+    <%= link_to "お店一覧に戻る", shops_path %>
+    <%= button_to "削除する", shop_path(@shop.id), method: :delete %>
+</div>

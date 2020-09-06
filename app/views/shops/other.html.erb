@@ -1,0 +1,18 @@
+<h3>その他のエリアのお店</h3>
+<div class="shops-container">
+<% @shops.each do |t| %>
+    <div class="shop">
+      <%= t.user.name %>
+      <%= t.name %>
+      <%= t.place %>
+      <%= t.money %>
+      <%= t.genre %>
+      <%= t.body %>
+      (♡<%= t.liked_users.count %>)
+      <%= t.created_at %>
+      <%= link_to "詳細へ", shop_path(t.id) %>
+      <%= link_to "編集する", edit_shop_path(t.id) %>
+      <%= button_to "削除する", shop_path(t.id), method: :delete %>
+    </div>
+<%end%> 
+</div> 
